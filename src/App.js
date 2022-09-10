@@ -14,11 +14,12 @@ const App = () => {
     const imageFile = e.target.files[0];
     const data = new FormData();
     data.append("file", imageFile);
+    //this folder have to create in the settings and have to Add upload preset with Unsigned system
     data.append("upload_preset", [your folder]);
 
     try {
       const result = await axios.post(
-        //aykhne [Your Cloudinary Cloud Name] baki link thik thak thakbe
+        // [Your Cloudinary Cloud Name] also have to install cloudinary
         "https://api.cloudinary.com/v1_1/[Your Cloudinary Cloud Name]/upload",
         data
       );
