@@ -14,12 +14,12 @@ const App = () => {
     const imageFile = e.target.files[0];
     const data = new FormData();
     data.append("file", imageFile);
-    data.append("upload_preset", "testingImg");
+    data.append("upload_preset", [your folder]);
 
     try {
       const result = await axios.post(
         //aykhne [Your Cloudinary Cloud Name] baki link thik thak thakbe
-        "https://api.cloudinary.com/v1_1/shokhbari/upload",
+        "https://api.cloudinary.com/v1_1/[Your Cloudinary Cloud Name]/upload",
         data
       );
       console.log(result?.data?.url);
