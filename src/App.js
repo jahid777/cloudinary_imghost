@@ -15,6 +15,7 @@ const App = () => {
     const imageFile = e.target.files[0];
     const data = new FormData();
     data.append("file", imageFile);
+    //your folder name
     data.append("upload_preset", "testingImg");
 
     try {
