@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
+import MultiImg from "./MultiImg";
 
 const App = () => {
   const [imgUrl, setImageUrl] = useState();
@@ -14,13 +15,12 @@ const App = () => {
     const imageFile = e.target.files[0];
     const data = new FormData();
     data.append("file", imageFile);
-    //this folder have to create in the settings and have to Add upload preset with Unsigned system
-    data.append("upload_preset", [your folder]);
+    data.append("upload_preset", "testingImg");
 
     try {
       const result = await axios.post(
-        // [Your Cloudinary Cloud Name] also have to install cloudinary
-        "https://api.cloudinary.com/v1_1/[Your Cloudinary Cloud Name]/upload",
+        //aykhne [Your Cloudinary Cloud Name] baki link thik thak thakbe
+        "https://api.cloudinary.com/v1_1/shokhbari/upload",
         data
       );
       console.log(result?.data?.url);
@@ -32,7 +32,7 @@ const App = () => {
   };
   return (
     <div style={{ textAlign: "center", marginTop: "20px" }}>
-      <h1>Upload your picute here</h1>
+      <h1>Upload your picture</h1>
       {loading && <h1>Loding</h1>}
       <input
         type="file"
@@ -44,6 +44,9 @@ const App = () => {
       <br />
 
       <img style={{ height: "100px" }} src={imgUrl} alt="" />
+
+      <h1>Multiple input</h1>
+      <MultiImg />
     </div>
   );
 };
