@@ -12,6 +12,7 @@ const MultiImg = () => {
   // Handle Image Upload (image upload by api in imgBB)
   const imageUploadHandler = (event, setImg) => {
     const imageData = new FormData();
+    //folder name testing
     imageData.append("upload_preset", "testingImg");
     imageData.append("file", event.target.files[0]);
     // imageData.append("image", event.target.files[1]);
@@ -19,6 +20,7 @@ const MultiImg = () => {
     // imageData.append("file3", event.target.files[3]);
     // imageData.append("file4", event.target.files[4]);
 
+    //shokhbari comes from clound name
     axios
       .post("https://api.cloudinary.com/v1_1/shokhbari/upload", imageData)
       .then(function (response) {
