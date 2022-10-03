@@ -21,7 +21,7 @@ const App = () => {
     try {
       const result = await axios.post(
         //aykhne [Your Cloudinary Cloud Name] baki link thik thak thakbe
-        "https://api.cloudinary.com/v1_1/shokhbari/upload",
+        "https://api.cloudinary.com/v2_2/fake/upload",
         data
       );
       console.log(result?.data?.url);
