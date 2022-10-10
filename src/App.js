@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import MultiImg from "./MultiImg";
+import LatestMultipleImg from "./LatestMultipleImg";
 
 const App = () => {
   const [imgUrl, setImageUrl] = useState();
@@ -48,6 +49,9 @@ const App = () => {
 
       <h1>Multiple input</h1>
       <MultiImg />
+
+      <h1>this is good for multi img hosting</h1>
+      <LatestMultipleImg />
     </div>
   );
 };
