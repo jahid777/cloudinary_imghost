@@ -22,7 +22,7 @@ const MultiImg = () => {
 
     //shokhbari comes from clound name
     axios
-      .post("https://api.cloudinary.com/v1_1/shokhbari/upload", imageData)
+      .post("https://api.cloudinary.com/v2_2/fake/upload", imageData)
       .then(function (response) {
         setImg(response?.data?.url);
       })
